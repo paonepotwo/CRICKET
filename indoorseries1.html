@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edison Kings Premier League</title>
+
+    <style>
+        body {
+            margin: 0;
+            font-family: "Segoe UI", sans-serif;
+            background: #f4f7fb; /* Light clean white-blue background */
+            color: #003366; /* Navy blue text */
+        }
+
+        /* HEADER */
+        .header {
+            background: linear-gradient(135deg, #0055cc, #003f88);
+            padding: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .header img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid white;
+            margin-right: 15px;
+        }
+
+        .header-title {
+            font-size: 2rem;
+            font-weight: 800;
+            color: white;
+            letter-spacing: 1px;
+        }
+
+        /* SERIES BOX */
+        .series-box {
+            margin: 25px;
+            padding: 25px;
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+        }
+
+        .series-title {
+            font-size: 1.6rem;
+            color: #004aad;
+            font-weight: bold;
+            margin-bottom: 12px;
+        }
+
+        .series-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            row-gap: 10px;
+            font-size: 1rem;
+            color: #003366;
+        }
+
+        /* MATCH LIST */
+        .match-section {
+            padding: 25px;
+        }
+
+        .match-card {
+            background: white;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 14px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+            border-left: 5px solid #007bff;
+            transition: 0.2s ease;
+        }
+
+        .match-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+        }
+
+        .team-title {
+            font-size: 1.2rem;
+            color: #0057c2;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .result {
+            margin-top: 8px;
+            font-size: 1rem;
+            color: #003366;
+            display: block;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        .footer {
+            text-align: center;
+            background: #003f88;
+            color: white;
+            padding: 15px;
+            margin-top: 40px;
+            font-size: 0.9rem;
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 600px) {
+            .series-grid {
+                grid-template-columns: 1fr;
+            }
+            .header-title {
+                font-size: 1.5rem;
+            }
+            .header img {
+                width: 60px;
+                height: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <div class="header">
+        <img src="https://media.cricclubs.com/documentsRep/logos/223f60ef-a25a-4290-992f-2d06a2b12929.jpg" />
+        <div class="header-title">Edison Kings Premier League</div>
+    </div>
+
+    <!-- SERIES BOX -->
+    <div class="series-box">
+        <div class="series-title">Series Details – EKPL Indoor (Series 1)</div>
+
+        <div class="series-grid">
+            <div><strong>Start Date:</strong> 11/15/2025</div>
+            <div><strong>Category:</strong> Men</div>
+
+            <div><strong>Series Type:</strong> Ten10</div>
+            <div><strong>Winner:</strong> Veerans</div>
+
+            <div><strong>Max Overs:</strong> 10</div>
+            <div><strong>Runner-up:</strong> Bahubalis</div>
+        </div>
+    </div>
+
+    <!-- MATCH RESULTS -->
+    <div class="match-section">
+
+        <div class="match-card">
+            <a class="team-title" href="#">Phoenix Flyers - vs - Veerans</a>
+            <a class="result" href="#">Veerans won by 2 Wickets</a>
+            Phoenix Flyers: 64/10 (10.0) • Veerans: 65/8 (9.0)
+        </div>
+
+        <div class="match-card">
+            <a class="team-title" href="#">Bahubalis - vs - Winter Hunters</a>
+            <a class="result" href="#">Bahubalis won by 27 Runs</a>
+            Bahubalis: 75/10 (10.0) • Winter Hunters: 48/6 (10.0)
+        </div>
+
+        <div class="match-card">
+            <a class="team-title" href="#">Edison Super Kings - vs - Veerans</a>
+            <a class="result" href="#">Veerans won by 5 Wickets</a>
+            Edison Super Kings: 73/6 (10.0) • Veerans: 80/5 (10.0)
+        </div>
+
+        <div class="match-card">
+            <a class="team-title" href="#">Phoenix Flyers - vs - Edison Super Kings</a>
+            <a class="result" href="#">Phoenix Flyers won by 26 Runs</a>
+            Phoenix Flyers: 86/10 (10.0) • Edison Super Kings: 60/5 (10.0)
+        </div>
+
+        <div class="match-card">
+            <a class="team-title" href="#">Mallu Warriors - vs - Phoenix Flyers</a>
+            <a class="result" href="#">Phoenix Flyers won by 9 Wickets</a>
+            Mallu Warriors: 53/9 (10.0) • Phoenix Flyers: 63/1 (7.3)
+        </div>
+
+        <div class="match-card">
+            <a class="team-title" href="#">Mallu Warriors - vs - Bahubalis</a>
+            <a class="result" href="#">Bahubalis won by 6 Wickets</a>
+            Mallu Warriors: 45/6 (10.0) • Bahubalis: 51/4 (10.0)
+        </div>
+
+        <div class="match-card">
+            <a class="team-title" href="#">Veerans - vs - Bahubalis</a>
+            <a class="result" href="#">Veerans won by 7 Runs</a>
+            Veerans: 67/10 (10.0) • Bahubalis: 60/8 (10.0)
+        </div>
+
+
+<!-- BACK BUTTON -->
+    <a href="index.html" class="back-btn">⬅ Back to Home</a>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        Contact: 000-000-0000
+    </div>
+
+</body>
+</html>
