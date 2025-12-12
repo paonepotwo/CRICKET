@@ -1,266 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>EKPL</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>EKPL</title>
 
-    <style>
-        /* RESET */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+<style>
+/* RESET */
+* { margin:0; padding:0; box-sizing:border-box; }
 
-        body {
-            font-family: "Segoe UI", Arial, sans-serif;
-            background: #eef2f5;
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* HEADER */
-        .header {
-            background: linear-gradient(135deg, #0055cc, #003f88);
-            padding: 18px 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            text-align: center;
-            flex-wrap: wrap;
-        }
-
-        .header img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid white;
-        }
-
-        .header-title {
-            font-size: 2rem;
-            font-weight: 800;
-            color: white;
-            letter-spacing: 1px;
-        }
-
-        /* NAVIGATION */
-        nav {
-            display: flex;
-            justify-content: center;
-            background: #06325c;
-            padding: 12px 0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 25px;
-            font-weight: 600;
-            font-size: 16px;
-            transition: 0.3s;
-        }
-
-        nav a:hover { background: rgba(255, 255, 255, 0.15); border-radius: 6px; }
-
-        .container { max-width: 900px; margin: auto; padding: 20px; }
-
-        section {
-            display: none;
-            padding: 25px;
-            margin-bottom: 25px;
-            animation: fadeIn 0.4s ease-in-out;
-        }
-
-        section.active { display: block; }
-
-        /* ---------- NEW HOME BIG DIV STYLE ----------- */
-        .home-big-card {
-            width: 100%;
-            max-width: 950px;
-            margin: 0 auto;
-            background: rgba(255, 255, 255, 0.85);
-            padding: 35px;
-            border-radius: 20px;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.18);
-            border-left: 8px solid #0077ff;
-            backdrop-filter: blur(6px);
-        }
-
-        .home-big-card h2 {
-            font-size: 1.8rem;
-            color: #003b7a;
-            margin-bottom: 20px;
-            font-weight: 800;
-        }
-
-        .home-big-card .series-card {
-            margin-top: 20px;
-            background: white;
-            border-radius: 14px;
-            padding: 25px;
-            box-shadow: 0 6px 25px rgba(20, 60, 120, 0.15);
-        }
-
-        /* ORIGINAL SERIES CARD STYLES INCLUDED */
-        .series-header { display:flex; align-items:center; justify-content:space-between; gap:12px; }
-        .series-title { margin:0; font-size:1.15rem; color:#00264d; font-weight:700; display:flex; gap:8px; align-items:center; }
-        .muted { font-weight:600; color:#0066cc; font-size:0.95rem; }
-        .badge { padding:6px 10px; border-radius:999px; font-weight:700; font-size:0.9rem; display:inline-block; }
-        .badge.closed { background:#ffeef0; color:#c2303f; border:1px solid rgba(194,48,63,0.08); }
-        .badge.coming { background:#fff4e5; color:#b86b00; border:1px solid rgba(184,107,0,0.08); }
-        .lead { margin:12px 0 8px 0; line-height:1.5; color:#034070; }
-        hr { border:0; border-top:1px solid #eef5ff; margin:14px 0; }
-        .next-title h4 { margin:0 0 8px 0; font-size:1rem; color:#003366; display:flex; align-items:center; gap:8px; }
-        .coming { color:#0a66c2; font-weight:700; }
-        .feature-list { margin:10px 0 16px 18px; color:#034070; }
-        .feature-list li { margin:8px 0; }
-        .cta-row { display:flex; align-items:center; gap:12px; margin-top:6px; flex-wrap:wrap; }
-        .btn.disabled {
-            background: linear-gradient(180deg,#e6eefc,#d7e7fb);
-            color:#6b86ad;
-            cursor:not-allowed;
-            box-shadow:none;
-            border:1px solid #dbebfd;
-            padding:10px 16px;
-            border-radius:8px;
-            font-weight:700;
-        }
-        .hint { color:#0b3b66; font-size:0.9rem; opacity:0.9; }
-
-        /* ABOUT & SERIES PAGE */
-        h2 { color: #0a4d8c; margin-bottom: 10px; }
-        
-        /* FOOTER */
-        .clean-footer {
-            background: linear-gradient(135deg, #004aad, #003377);
-            padding: 25px 10px;
-            text-align: center;
-            color: white;
-            border-top: 4px solid #66aaff;
-            margin-top: 40px;
-            box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
-        }
-
-        .footer-links a {
-            color: white; text-decoration: none; margin: 0 15px;
-            font-size: 1.1rem; font-weight: 600;
-        }
-
-        /* MOBILE */
-        @media (max-width: 768px) {
-            .home-big-card { padding: 20px; }
-            .header img { width: 65px; height: 65px; }
-            .header-title { font-size: 1.6rem; }
-        }
-		
-		/* General button styles */
-.btn {
-    font-size: 1rem;
-    font-weight: 700;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: #eef2f5;
+    color: #333;
+    line-height: 1.6;
 }
 
-/* Disabled button */
-.btn.disabled {
-    background: linear-gradient(180deg,#e6eefc,#d7e7fb);
-    color: #6b86ad;
-    cursor: not-allowed;
-    border: 1px solid #dbebfd;
-    border-radius: 8px;
+/* HEADER */
+.header {
+    background: linear-gradient(135deg, #0055cc, #003f88);
+    padding: 18px 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    text-align: center;
 }
 
-/* Green active button */
-.btn-green {
-    background: linear-gradient(135deg, #28a745, #218838); /* nice green gradient */
+.header img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 3px solid white;
+}
+
+.header-title {
+    font-size: 2rem;
+    font-weight: 800;
     color: white;
-    border-radius: 12px; /* rounded corners */
-    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+    letter-spacing: 1px;
 }
 
-.btn-green:hover {
-    background: linear-gradient(135deg, #218838, #28a745); /* hover effect */
-    transform: translateY(-2px);
+/* NAVIGATION */
+nav {
+    display:flex;
+    justify-content:center;
+    background:#06325c;
+    padding:12px 0;
+    position: sticky;
+    top:0;
+    z-index:1000;
 }
 
-/* Closed badge (already in your CSS) */
+nav a {
+    color:white;
+    text-decoration:none;
+    padding:10px 25px;
+    font-weight:600;
+    font-size:16px;
+    transition:0.3s;
+}
+
+nav a:hover { background: rgba(255,255,255,0.15); border-radius:6px; }
+
+.container { max-width:900px; margin:auto; padding:20px; }
+
+section { display:none; padding:25px; margin-bottom:25px; }
+section.active { display:block; }
+
+/* HOME CARD */
+.home-big-card {
+    width:100%;
+    max-width:950px;
+    margin:0 auto;
+    background: linear-gradient(135deg, #f0f8ff, #e0f2ff);
+    padding:30px;
+    border-radius:20px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.home-big-card h2 {
+    font-size:2rem;
+    color:#003366;
+    margin-bottom:20px;
+    text-align:center;
+}
+
+/* SERIES CARD */
+.series-card {
+    background:#fff;
+    border-radius:18px;
+    padding:25px;
+    margin-top:20px;
+    box-shadow:0 6px 25px rgba(0,0,0,0.12);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.series-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.18);
+}
+
+.series-header {
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:15px;
+}
+
+.series-title {
+    font-size:1.2rem;
+    color:#00264d;
+    font-weight:700;
+}
+
+.muted { font-weight:600; color:#0066cc; font-size:0.95rem; }
+
+/* BADGES */
 .badge.closed {
     background: #ffeef0;
     color: #c2303f;
     border: 1px solid rgba(194,48,63,0.08);
-}
-
-/* New green open badge */
-.badge.open {
-    background: #d4edda; /* light green background */
-    color: #155724; /* dark green text */
-    border: 1px solid rgba(21,87,36,0.3);
-    font-weight: 700;
+    border-radius: 50px;
     padding: 5px 12px;
-    border-radius: 999px; /* fully rounded */
-    font-size: 0.9rem;
+    font-weight:700;
+    font-size:0.9rem;
 }
 
-/* ABOUT SECTION STYLES */
+.badge.open {
+    background:#d4edda;
+    color:#155724;
+    border:1px solid rgba(21,87,36,0.3);
+    border-radius:50px;
+    padding:5px 12px;
+    font-weight:700;
+    font-size:0.9rem;
+}
+
+/* TEXT & FEATURES */
+.lead {
+    font-size:1rem;
+    color:#034070;
+    margin-bottom:12px;
+    line-height:1.6;
+}
+
+.next-title h4 {
+    font-size:1rem;
+    color:#0a66c2;
+    margin-bottom:10px;
+}
+
+.feature-list { margin:10px 0 16px 20px; color:#034070; }
+.feature-list li { margin-bottom:8px; font-size:0.95rem; }
+
+/* BUTTONS */
+.btn {
+    font-size:1rem;
+    font-weight:700;
+    padding:10px 20px;
+    border:none;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.btn-green {
+    background: linear-gradient(135deg, #28a745, #218838);
+    color:white;
+    border-radius:50px;
+    box-shadow: 0 4px 10px rgba(0,128,0,0.3);
+}
+
+.btn-green:hover {
+    background: linear-gradient(135deg, #218838, #28a745);
+    transform: translateY(-2px);
+}
+
+.cta-row { margin-top:15px; display:flex; align-items:center; gap:12px; flex-wrap:wrap; }
+.hint { color:#0b3b66; font-size:0.9rem; opacity:0.9; }
+
+/* SERIES PAGE */
+#series h2 a { text-decoration:none; color:#003366; }
+
+/* ABOUT SECTION */
 #about {
-    background: #f0f6fc; /* light blue-ish background */
-    padding: 30px 20px;
-    border-radius: 15px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
-    margin-bottom: 25px;
+    background:#f0f6fc;
+    padding:30px 20px;
+    border-radius:15px;
+    box-shadow:0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom:25px;
 }
 
 #about h2 {
-    color: #003366;
-    font-size: 2rem;
-    margin-bottom: 15px;
-    text-align: center;
+    color:#003366;
+    font-size:2rem;
+    margin-bottom:15px;
+    text-align:center;
 }
 
-#about h3 {
-    color: #0055cc;
-    margin-top: 20px;
-    margin-bottom: 12px;
-}
-
-#about p {
-    color: #034070;
-    font-size: 1rem;
-    margin-bottom: 15px;
-    line-height: 1.6;
-}
-
-#about ul {
-    list-style: none;
-    padding-left: 0;
-}
-
+#about h3 { color:#0055cc; margin-top:20px; margin-bottom:12px; }
+#about p { color:#034070; font-size:1rem; margin-bottom:15px; line-height:1.6; }
+#about ul { list-style:none; padding-left:0; }
 #about ul li {
-    position: relative;
-    padding-left: 28px;
-    margin-bottom: 10px;
-    font-size: 1rem;
-    color: #034070;
+    position:relative;
+    padding-left:28px;
+    margin-bottom:10px;
+    font-size:1rem;
+    color:#034070;
 }
-
 #about ul li::before {
-    content: "✔"; /* checkmark icon */
-    position: absolute;
-    left: 0;
-    color: #007f3f; /* green checkmark */
-    font-weight: bold;
+    content:"✔";
+    position:absolute;
+    left:0;
+    color:#007f3f;
+    font-weight:bold;
 }
 
+/* FOOTER */
+.clean-footer {
+    background: linear-gradient(135deg, #004aad, #003377);
+    padding: 25px 10px;
+    text-align: center;
+    color: white;
+    border-top: 4px solid #66aaff;
+    margin-top: 40px;
+    box-shadow: 0 -3px 10px rgba(0,0,0,0.2);
+}
+.footer-links a {
+    color:white; text-decoration:none; margin:0 15px;
+    font-size:1.1rem; font-weight:600;
+}
 
-    </style>
+/* MOBILE RESPONSIVE */
+@media(max-width:768px) {
+    .home-big-card { padding:20px; }
+    .series-card { padding:20px; }
+    .header img { width:65px; height:65px; }
+    .header-title { font-size:1.6rem; }
+    .series-title { font-size:1rem; }
+    .btn-green { width:100%; text-align:center; }
+    #about { padding:20px; }
+    #about h2 { font-size:1.5rem; }
+}
+</style>
 </head>
 
 <body>
-
 <!-- HEADER -->
 <div class="header">
     <img src="https://media.cricclubs.com/documentsRep/logos/223f60ef-a25a-4290-992f-2d06a2b12929.jpg" />
@@ -275,52 +261,33 @@
 </nav>
 
 <div class="container">
-
-    <!-- NEW HOME PAGE DESIGN -->
+    <!-- HOME SECTION -->
     <section id="home" class="active">
         <div class="home-big-card">
             <h2>Welcome to Cricket Hub in EDISON, NJ</h2>
-
-            <!-- Your exact Series Card kept same -->
             <div class="series-card">
                 <div class="series-header">
-                    <h3 class="series-title">🏏 Series 3 – <span class="muted">Currently Active</span></h3>
-                    <!-- Old closed badge -->
-<!-- <span class="badge closed">Registrations Closed</span> -->
-
-<!-- New green open badge -->
-<span class="badge open">Registrations Open</span>
-
+                    <h3 class="series-title">🏏 Series 3 – <span class="muted">Currently inprogress</span></h3>
+                    <span class="badge open">Registrations Open</span>
                 </div>
-
                 <p class="lead">
-                    Registrations for <strong>Series 3</strong> are now <strong>closed</strong> as the tournament is already in progress.
-                    Thank you to everyone who registered and showed an amazing response!
+                    Registrations for <strong>Series 3</strong> are now open! Thank you to everyone who registered and showed an amazing response!
                 </p>
-
                 <hr>
-
                 <div class="next-section">
                     <div class="next-title">
-                        <h4>📝 Next Series – <span class="coming">Registrations Opening Soon</span></h4>
+                        <h4>📝 Next Series – <span class="coming">Coming Soon</span></h4>
                     </div>
-
                     <p>Get ready! A brand-new indoor cricket series with <strong>exciting rules</strong>, <strong>upgraded format</strong>, and more competitive gameplay will be announced soon.</p>
-
                     <ul class="feature-list">
                         <li>🚀 <strong>New registration dates</strong></li>
-                        <li>🎯 <strong>Updated rules</strong></li>
+                        <li>🔥 <strong>Team limits & format</strong></li>
+                        <li>🏆 <strong>Prizes & awards</strong></li>
                     </ul>
-
                     <div class="cta-row">
-                       <!-- OLD: Registration closed button -->
-<!-- <button class="btn disabled" disabled>Register (Opens Soon)</button> -->
-
-<!-- NEW: Active registration button -->
-<a href="https://forms.gle/3QoRK8kww24omL119" target="blank">
-<button class="btn btn-green">Register Now</button></a>
-
-
+                        <a href="https://forms.gle/3QoRK8kww24omL119" target="_blank">
+                            <button class="btn btn-green">Register Now</button>
+                        </a>
                         <small class="hint">Follow this page for announcements.</small>
                     </div>
                 </div>
@@ -328,43 +295,28 @@
         </div>
     </section>
 
-    <!-- SERIES PAGE -->
+    <!-- SERIES SECTION -->
     <section id="series">
         <h2><a href="indoor.html">Indoor Series</a></h2>
         <h2><a href="indoor.html">Outdoor Series</a></h2>
     </section>
 
-    <!-- ABOUT PAGE -->
-<section id="about">
-    <h2>About EKPL</h2>
-    
-    <p>
-        Cricket Hub in Edison, NJ, is dedicated to bringing cricket enthusiasts a modern and engaging platform to follow all cricket-related activities, events, and series. Our mission is to make cricket accessible, fun, and competitive for players alike.
-    </p>
-
-    <p>
-        We started our journey with indoor cricket, introducing unique and exciting formats to keep the game lively and competitive. Our first two series were a great success, with enthusiastic participation from local teams and players.
-    </p>
-
-    <p>
-        🏏 <strong>Series 3</strong> is currently ongoing, showcasing high-energy matches and a platform for players to demonstrate their skills. We have many more series planned in the future with innovative rules, upgraded formats, and exciting prizes!
-    </p>
-
-    <h3>What Makes Our Series Unique:</h3>
-    <ul>
-        <li>🎯 <strong>Interesting Formats:</strong> Indoor cricket with creative scoring and gameplay rules.</li>
-        <li>🚀 <strong>Competitive Environment:</strong> Encouraging both amateur and professional players to compete at their best.</li>
-        <li>🏆 <strong>Prizes & Recognition:</strong> Awards for winning teams and standout performers.</li>
-        <li>🎉 <strong>Community Engagement:</strong> Bringing together cricket fans, local teams, and families for an enjoyable experience.</li>
-        <li>📅 <strong>Regular Updates:</strong> New series, updated rules, and registration opportunities announced frequently.</li>
-    </ul>
-
-    <p>
-        Join us to be part of a growing cricket community in Edison, NJ, experience high-quality indoor and outdoor cricket, and stay tuned for upcoming series!
-    </p>
-</section>
-
-
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2>About EKPL</h2>
+        <p>Cricket Hub in Edison, NJ, is dedicated to bringing cricket enthusiasts a modern and engaging platform to follow all cricket-related activities, events, and series. Our mission is to make cricket accessible, fun, and competitive for players alike.</p>
+        <p>We started our journey with indoor cricket, introducing unique and exciting formats. Series 1 and 2 were a huge success with enthusiastic participation from local teams.</p>
+        <p>🏏 <strong>Series 3</strong> is currently ongoing, showcasing high-energy matches and skillful gameplay. More series are planned with upgraded formats and exciting prizes!</p>
+        <h3>What Makes Our Series Unique:</h3>
+        <ul>
+            <li>🎯 <strong>Interesting Formats:</strong> Indoor cricket with creative scoring and gameplay rules.</li>
+            <li>🚀 <strong>Competitive Environment:</strong> Encouraging amateur and professional players to compete.</li>
+            <li>🏆 <strong>Prizes & Recognition:</strong> Awards for winning teams and standout performers.</li>
+            <li>🎉 <strong>Community Engagement:</strong> Bringing cricket fans, local teams, and families together.</li>
+            <li>📅 <strong>Regular Updates:</strong> New series, updated rules, and registration announcements.</li>
+        </ul>
+        <p>Join us to be part of a growing cricket community in Edison, NJ, and stay tuned for upcoming series!</p>
+    </section>
 </div>
 
 <!-- FOOTER -->
@@ -375,16 +327,14 @@
         <a href="#">About</a>
         <a href="#">Contact</a>
     </div>
-
     <div class="footer-copy">© 2025 Edison Kings Premier League</div>
 </footer>
 
 <script>
-function showPage(pageId) {
+function showPage(pageId){
     document.querySelectorAll("section").forEach(sec => sec.classList.remove("active"));
     document.getElementById(pageId).classList.add("active");
 }
 </script>
-
 </body>
 </html>
