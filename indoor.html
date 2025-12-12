@@ -145,6 +145,71 @@
     opacity: 0.9;
     letter-spacing: 0.4px;
 }
+
+        /*  MOBILE RESPONSIVE DESIGN  */
+        @media (max-width: 768px) {
+
+            .header {
+                padding: 15px 10px;
+                flex-direction: column;
+            }
+
+            .header img {
+                width: 65px;
+                height: 65px;
+            }
+
+            .header-title {
+                font-size: 1.6rem;
+            }
+
+            .series-box {
+                margin: 15px;
+                padding: 18px;
+            }
+
+            .series-title {
+                font-size: 1.3rem;
+            }
+
+            .series-grid {
+                grid-template-columns: 1fr;
+                font-size: 0.95rem;
+            }
+
+            .match-section {
+                padding: 15px;
+            }
+
+            .match-card {
+                padding: 15px;
+                font-size: 0.9rem;
+            }
+
+            .team-title {
+                font-size: 1rem;
+            }
+
+            .result {
+                font-size: 0.95rem;
+            }
+        }
+
+        /* EXTRA SMALL SCREENS (phones ≤ 400px) */
+        @media (max-width: 400px) {
+            .header-title {
+                font-size: 1.3rem;
+            }
+
+            .header img {
+                width: 55px;
+                height: 55px;
+            }
+
+            .match-card {
+                font-size: 0.85rem;
+            }
+        }
     </style>
 </head>
 <body>
