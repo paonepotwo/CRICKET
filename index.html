@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cricket Hub</title>
+    <title>EKPL</title>
 
     <style>
         /* RESET */
@@ -154,6 +154,108 @@
             .header img { width: 65px; height: 65px; }
             .header-title { font-size: 1.6rem; }
         }
+		
+		/* General button styles */
+.btn {
+    font-size: 1rem;
+    font-weight: 700;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+/* Disabled button */
+.btn.disabled {
+    background: linear-gradient(180deg,#e6eefc,#d7e7fb);
+    color: #6b86ad;
+    cursor: not-allowed;
+    border: 1px solid #dbebfd;
+    border-radius: 8px;
+}
+
+/* Green active button */
+.btn-green {
+    background: linear-gradient(135deg, #28a745, #218838); /* nice green gradient */
+    color: white;
+    border-radius: 12px; /* rounded corners */
+    box-shadow: 0 4px 10px rgba(0, 128, 0, 0.3);
+}
+
+.btn-green:hover {
+    background: linear-gradient(135deg, #218838, #28a745); /* hover effect */
+    transform: translateY(-2px);
+}
+
+/* Closed badge (already in your CSS) */
+.badge.closed {
+    background: #ffeef0;
+    color: #c2303f;
+    border: 1px solid rgba(194,48,63,0.08);
+}
+
+/* New green open badge */
+.badge.open {
+    background: #d4edda; /* light green background */
+    color: #155724; /* dark green text */
+    border: 1px solid rgba(21,87,36,0.3);
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 999px; /* fully rounded */
+    font-size: 0.9rem;
+}
+
+/* ABOUT SECTION STYLES */
+#about {
+    background: #f0f6fc; /* light blue-ish background */
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    margin-bottom: 25px;
+}
+
+#about h2 {
+    color: #003366;
+    font-size: 2rem;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#about h3 {
+    color: #0055cc;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+#about p {
+    color: #034070;
+    font-size: 1rem;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+#about ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+#about ul li {
+    position: relative;
+    padding-left: 28px;
+    margin-bottom: 10px;
+    font-size: 1rem;
+    color: #034070;
+}
+
+#about ul li::before {
+    content: "✔"; /* checkmark icon */
+    position: absolute;
+    left: 0;
+    color: #007f3f; /* green checkmark */
+    font-weight: bold;
+}
+
+
     </style>
 </head>
 
@@ -183,7 +285,12 @@
             <div class="series-card">
                 <div class="series-header">
                     <h3 class="series-title">🏏 Series 3 – <span class="muted">Currently Active</span></h3>
-                    <span class="badge closed">Registrations Closed</span>
+                    <!-- Old closed badge -->
+<!-- <span class="badge closed">Registrations Closed</span> -->
+
+<!-- New green open badge -->
+<span class="badge open">Registrations Open</span>
+
                 </div>
 
                 <p class="lead">
@@ -206,7 +313,14 @@
                     </ul>
 
                     <div class="cta-row">
-                        <button class="btn disabled" disabled>Register (Opens Soon)</button>
+                       <!-- OLD: Registration closed button -->
+<!-- <button class="btn disabled" disabled>Register (Opens Soon)</button> -->
+
+<!-- NEW: Active registration button -->
+<a href="https://forms.gle/3QoRK8kww24omL119" target="blank">
+<button class="btn btn-green">Register Now</button></a>
+
+
                         <small class="hint">Follow this page for announcements.</small>
                     </div>
                 </div>
@@ -221,11 +335,35 @@
     </section>
 
     <!-- ABOUT PAGE -->
-    <section id="about">
-        <h2>About Cricket Hub</h2>
-        <p>Cricket Hub is designed to give fans a clean, fast, and modern platform to follow cricket news, fixtures, player stats, and more.</p>
-        <p>This site is created for practice and demonstration with responsive design.</p>
-    </section>
+<section id="about">
+    <h2>About EKPL</h2>
+    
+    <p>
+        Cricket Hub in Edison, NJ, is dedicated to bringing cricket enthusiasts a modern and engaging platform to follow all cricket-related activities, events, and series. Our mission is to make cricket accessible, fun, and competitive for players alike.
+    </p>
+
+    <p>
+        We started our journey with indoor cricket, introducing unique and exciting formats to keep the game lively and competitive. Our first two series were a great success, with enthusiastic participation from local teams and players.
+    </p>
+
+    <p>
+        🏏 <strong>Series 3</strong> is currently ongoing, showcasing high-energy matches and a platform for players to demonstrate their skills. We have many more series planned in the future with innovative rules, upgraded formats, and exciting prizes!
+    </p>
+
+    <h3>What Makes Our Series Unique:</h3>
+    <ul>
+        <li>🎯 <strong>Interesting Formats:</strong> Indoor cricket with creative scoring and gameplay rules.</li>
+        <li>🚀 <strong>Competitive Environment:</strong> Encouraging both amateur and professional players to compete at their best.</li>
+        <li>🏆 <strong>Prizes & Recognition:</strong> Awards for winning teams and standout performers.</li>
+        <li>🎉 <strong>Community Engagement:</strong> Bringing together cricket fans, local teams, and families for an enjoyable experience.</li>
+        <li>📅 <strong>Regular Updates:</strong> New series, updated rules, and registration opportunities announced frequently.</li>
+    </ul>
+
+    <p>
+        Join us to be part of a growing cricket community in Edison, NJ, experience high-quality indoor and outdoor cricket, and stay tuned for upcoming series!
+    </p>
+</section>
+
 
 </div>
 
