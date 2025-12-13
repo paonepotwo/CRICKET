@@ -129,13 +129,22 @@ section.active { display:block; }
 }
 
 .badge.open {
-    background:#d4edda;
-    color:#155724;
-    border:1px solid rgba(21,87,36,0.3);
-    border-radius:4px;   /* small radius or use 0 */
-    padding:5px 12px;
-    font-weight:700;
-    font-size:0.9rem;
+    background: #d4edda;
+    color: #155724;
+    border: 1px solid rgba(21,87,36,0.3);
+    border-radius: 4px;          /* not curved */
+    padding: 3px 8px;            /* smaller padding */
+    font-weight: 700;
+    font-size: 0.8rem;           /* smaller text */
+    line-height: 1.2;
+    display: inline-block;       /* prevents stretching */
+    white-space: nowrap;         /* keeps it in one line */
+}
+@media (max-width: 768px) {
+    .badge.open {
+        font-size: 0.75rem;
+        padding: 2px 6px;
+    }
 }
 
 
