@@ -19,7 +19,7 @@ body {
 /* HEADER */
 .header {
     background: linear-gradient(135deg, #0055cc, #003f88);
-    padding: 18px 12px;
+    padding: 16px 10px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -252,15 +252,15 @@ section.active { display:block; }
 }
 
 /* MOBILE RESPONSIVE */
-@media(max-width:768px) {
+@media(max-width:650px) {
     .home-big-card { padding:20px; }
     .series-card { padding:20px; }
     .header img { width:65px; height:65px; }
-    .header-title { font-size:1.6rem; }
+    .header-title { font-size:1.2rem; }
     .series-title { font-size:1rem; }
     .btn-green { width:100%; text-align:center; }
-    #about { padding:20px; }
-    #about h2 { font-size:1.5rem; }
+    #about { padding:16px; }
+    #about h2 { font-size:1rem; }
 }
 .header-text {
     display: flex;
@@ -290,6 +290,55 @@ section.active { display:block; }
     }
 }
 
+#Matches {
+    max-width: 700px;
+    margin: 40px auto;
+    font-family: Arial, sans-serif;
+}
+
+#Matches h2 {
+    text-align: center;
+    color: #0b3c5d;
+    margin-bottom: 20px;
+}
+
+.match-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #ffffff;
+    border-left: 5px solid #1e90ff;
+    padding: 14px 16px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.teams {
+    font-size: 16px;
+    color: #0b3c5d;
+    font-weight: 600;
+}
+
+.time {
+    background: #1e90ff;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Mobile Friendly */
+@media (max-width: 600px) {
+    .match-card {
+        flex-direction: column;
+        gap: 8px;
+        text-align: center;
+    }
+}
+
+
 
 </style>
 </head>
@@ -309,6 +358,7 @@ section.active { display:block; }
 <!-- NAVIGATION -->
 <nav>
     <a href="#" onclick="showPage('home')">Home</a>
+	<a href="#" onclick="showPage('Matches')">Matches</a>
     <a href="#" onclick="showPage('series')">Series</a>
     <a href="#" onclick="showPage('about')">About Us</a>
 </nav>
@@ -350,12 +400,74 @@ section.active { display:block; }
             </div>
         </div>
     </section>
+	
+
 
     <!-- SERIES SECTION -->
-    <section id="series">
-        <h2><a href="indoor.html">Indoor Series</a></h2>
-        <h2><a href="indoor.html">Outdoor Series</a></h2>
-    </section>
+<section id="Matches">
+    <h2>Upcoming Matches</h2>
+
+    <div class="match-card">
+        <span class="teams">Blues XI <b>vs</b> 11Hunters</span>
+        <span class="time">8:00 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">GS Kings <b>vs</b> Edison Super Kings</span>
+        <span class="time">8:00 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">Blues XI <b>vs</b> Winter Hunters</span>
+        <span class="time">9:00 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">Beekman CC <b>vs</b> 11Hunters</span>
+        <span class="time">9:00 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">United Warriors <b>vs</b> Edison Super Kings</span>
+        <span class="time">10:00 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">Bahubalis <b>vs</b> Boundary Hunters</span>
+        <span class="time">11:00 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">Beekman CC <b>vs</b> Boundary Hunters</span>
+        <span class="time">11:00 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">Edison Kings <b>vs</b> Central Jersey</span>
+        <span class="time">11:50 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">United Warriors <b>vs</b> Central Jersey</span>
+        <span class="time">11:50 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">Edison Kings <b>vs</b> Shadow Hawks</span>
+        <span class="time">8:00 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">GS Kings <b>vs</b> Central Jersey</span>
+        <span class="time">8:00 PM</span>
+    </div>
+
+    <div class="match-card">
+        <span class="teams">Blues XI <b>vs</b> Boundary Hunters</span>
+        <span class="time">8:00 PM</span>
+    </div>
+</section>
+
 
     <!-- ABOUT SECTION -->
     <section id="about">
