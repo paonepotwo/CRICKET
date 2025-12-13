@@ -224,6 +224,8 @@ section.active { display:block; }
 #series h2 a:hover {
     color: #0055cc;
 }
+
+
 /* FOOTER */
 .clean-footer {
     background: linear-gradient(135deg, #004aad, #003377);
@@ -250,6 +252,35 @@ section.active { display:block; }
     #about { padding:20px; }
     #about h2 { font-size:1.5rem; }
 }
+.header-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header-tagline {
+    margin-top: 6px;
+    font-size: 1rem;
+    font-style: italic;
+    color: #dbe9ff;
+    letter-spacing: 0.5px;
+}
+
+/* Mobile adjustment */
+@media (max-width: 768px) {
+    .header-tagline {
+        font-size: 0.9rem;
+    }
+}
+@media (max-width: 768px) {
+    .home-big-card h2 {
+        font-size: 1.6rem;   /* smaller for mobile */
+        line-height: 1.3;
+        margin-bottom: 18px;
+    }
+}
+
+
 </style>
 </head>
 
@@ -257,35 +288,44 @@ section.active { display:block; }
 <!-- HEADER -->
 <div class="header">
     <img src="https://media.cricclubs.com/documentsRep/logos/223f60ef-a25a-4290-992f-2d06a2b12929.jpg" />
-    <div class="header-title">Edison Kings Premier League</div>
+    
+    <div class="header-text">
+        <div class="header-title">Edison Kings Premier League</div>
+        <div class="header-tagline"><h2><i>Bat. Ball. Battle. Repeat.</i></h2></div>
+    </div>
 </div>
+
 
 <!-- NAVIGATION -->
 <nav>
     <a href="#" onclick="showPage('home')">Home</a>
     <a href="#" onclick="showPage('series')">Series</a>
-    <a href="#" onclick="showPage('about')">About</a>
+    <a href="#" onclick="showPage('about')">About Us</a>
 </nav>
 
 <div class="container">
     <!-- HOME SECTION -->
     <section id="home" class="active">
         <div class="home-big-card">
-            <h2>Welcome to Cricket Hub in EDISON, NJ</h2>
+            <h2>Welcome to EKPL in EDISON, NJ</h2>
             <div class="series-card">
                 <div class="series-header">
-                    <h3 class="series-title">🏏 Series 3 – <span class="muted">Currently inprogress</span></h3>
+                    <h3 class="series-title">🏏 Indoor Series 3 – <span class="muted">Currently inprogress</span></h3>
                     <span class="badge open">Registrations Open</span>
                 </div>
+				
+				 <p class="lead">
+                    Thank you to everyone who registered and showed an amazing response for for <strong>Series 3 </strong>.
+                </p>
                 <p class="lead">
-                    Registrations for <strong>Series 3</strong> are now open! Thank you to everyone who registered and showed an amazing response!
+                    Registrations for <strong>Series 4 </strong> are now open! Please click on the below link to register.
                 </p>
                 <hr>
                 <div class="next-section">
                     <div class="next-title">
-                        <h4>📝 Next Series – <span class="coming">Coming Soon</span></h4>
+                        <h4>📝 Next Series – <span class="coming">EKPL Indoor Series 4</span></h4>
                     </div>
-                    <p>Get ready! A brand-new indoor cricket series with <strong>exciting rules</strong>, <strong>upgraded format</strong>, and more competitive gameplay will be announced soon.</p>
+                    <p>Get ready! Once registrations close, we will publish the official match schedule and fixtures, followed by the opening of registrations for the next series.</p>
                     <ul class="feature-list">
                         <li>🚀 <strong>New registration dates</strong></li>
                         <li>🔥 <strong>Team limits & format</strong></li>
@@ -295,7 +335,7 @@ section.active { display:block; }
                         <a href="https://forms.gle/3QoRK8kww24omL119" target="_blank">
                             <button class="btn btn-green">Register Now</button>
                         </a>
-                        <small class="hint">Follow this page for announcements.</small>
+                        <small class="hint">Keep an eye on this site for more updates....</small>
                     </div>
                 </div>
             </div>
@@ -311,7 +351,7 @@ section.active { display:block; }
     <!-- ABOUT SECTION -->
     <section id="about">
         <h2>About EKPL</h2>
-        <p>Cricket Hub in Edison, NJ, is dedicated to bringing cricket enthusiasts a modern and engaging platform to follow all cricket-related activities, events, and series. Our mission is to make cricket accessible, fun, and competitive for players alike.</p>
+        <p><strong>EKPL</strong> in <strong>Edison</strong>, NJ, is dedicated to bringing cricket enthusiasts a modern and engaging platform to follow all cricket-related activities, events, and series. Our mission is to make cricket accessible, fun, and competitive for players alike.</p>
         <p>We started our journey with indoor cricket, introducing unique and exciting formats. Series 1 and 2 were a huge success with enthusiastic participation from local teams.</p>
         <p>🏏 <strong>Series 3</strong> is currently ongoing, showcasing high-energy matches and skillful gameplay. More series are planned with upgraded formats and exciting prizes!</p>
         <h3>What Makes Our Series Unique:</h3>
@@ -345,4 +385,3 @@ function showPage(pageId){
 </script>
 </body>
 </html>
-
