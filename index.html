@@ -339,6 +339,82 @@ section.active { display:block; }
 }
 
 
+/* ================= MOBILE TEXT RESPONSIVENESS ================= */
+@media (max-width: 768px) {
+
+    /* Base text scaling */
+    body {
+        font-size: 15px;
+        line-height: 1.6;
+    }
+
+    /* Header */
+    .header-title {
+        font-size: 1.4rem;
+        line-height: 1.3;
+        letter-spacing: 0.5px;
+    }
+
+    .header-tagline {
+        font-size: 0.85rem;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    /* Page headings */
+    h2 {
+        font-size: 1.35rem;
+        line-height: 1.35;
+        margin-bottom: 14px;
+    }
+
+    h3 {
+        font-size: 1rem;
+        line-height: 1.3;
+    }
+
+    /* Cards & content */
+    .home-big-card,
+    .series-card {
+        padding: 18px;
+    }
+
+    .lead {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    /* Matches */
+    .teams {
+        font-size: 0.95rem;
+        line-height: 1.4;
+        text-align: center;
+    }
+
+    .time {
+        font-size: 0.85rem;
+        padding: 5px 10px;
+    }
+
+    .match-card {
+        flex-direction: column;
+        gap: 6px;
+        text-align: center;
+    }
+
+    /* About section text */
+    #about p {
+        font-size: 0.95rem;
+        line-height: 1.65;
+    }
+
+    /* Container spacing */
+    .container {
+        padding: 14px;
+    }
+}
+
+
 
 </style>
 </head>
