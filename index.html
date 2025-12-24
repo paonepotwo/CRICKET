@@ -360,11 +360,6 @@ section.active { display:block; }
         line-height: 1.4;
         text-align: center;
     }
-	   .inside-header {
-        font-size: 0.99rem;
-        line-height: 1.4;
-        text-align: center;
-    }
 
     /* Page headings */
     h2 {
@@ -416,6 +411,14 @@ section.active { display:block; }
     /* Container spacing */
     .container {
         padding: 14px;
+    }
+}
+@media (max-width: 650px) {
+    .inside-header h2 {
+        font-size: 0.99rem;
+        line-height: 1.4;
+        margin: 0;
+        text-align: center;
     }
 }
 
